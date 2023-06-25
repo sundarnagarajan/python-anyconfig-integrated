@@ -38,6 +38,12 @@ try:
 except ImportError:
     warnings.warn(_NA_MSG.format('toml', 'TOML'), ImportWarning)
 
+try:
+    from . import configobj
+    PARSERS.append(configobj.Parser)
+except ImportError:
+    warnings.warn(_NA_MSG.format('configobj', 'ConfigObj'), ImportWarning)
+
 
 __all__ = [
     'ParserT', 'ParsersT', 'ParserClssT',
