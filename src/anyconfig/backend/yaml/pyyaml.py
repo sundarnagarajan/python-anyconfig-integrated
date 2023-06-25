@@ -210,6 +210,7 @@ class Parser(common.Parser):
                   'default_flow_style', 'canonical', 'indent', 'width',
                   'allow_unicode', 'line_break', 'encoding', 'explicit_start',
                   'explicit_end', 'version', 'tags']
+    _extensions = ['yaml', 'yml']
 
     load_from_stream = base.to_method(yml_load)
     dump_to_stream = base.to_method(yml_dump)

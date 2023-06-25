@@ -118,6 +118,7 @@ class Parser(common.Parser):
     _cid = 'ruamel.yaml'
     _load_opts = _YAML_OPTS
     _dump_opts = _YAML_OPTS
+    _extensions = ['yaml', 'yml']
 
     load_from_stream = base.to_method(yml_load)
     dump_to_stream = base.to_method(yml_dump)
