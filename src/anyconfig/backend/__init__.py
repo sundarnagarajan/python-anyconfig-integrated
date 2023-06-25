@@ -56,6 +56,12 @@ try:
 except ImportError:
     warnings.warn(_NA_MSG.format('bson', 'BSON'), ImportWarning)
 
+try:
+    from . import cbor2
+    PARSERS.append(cbor2.Parser)
+except ImportError:
+    warnings.warn(_NA_MSG.format('cbor2', 'CBOR2'), ImportWarning)
+
 
 __all__ = [
     'ParserT', 'ParsersT', 'ParserClssT',
