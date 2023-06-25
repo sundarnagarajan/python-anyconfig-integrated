@@ -44,6 +44,12 @@ try:
 except ImportError:
     warnings.warn(_NA_MSG.format('configobj', 'ConfigObj'), ImportWarning)
 
+try:
+    from . import json5
+    PARSERS.append(json5.Parser)
+except ImportError:
+    warnings.warn(_NA_MSG.format('json5', 'JSON5'), ImportWarning)
+
 
 __all__ = [
     'ParserT', 'ParsersT', 'ParserClssT',
