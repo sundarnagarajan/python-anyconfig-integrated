@@ -84,6 +84,7 @@ class Parser(base.StreamParser,
     _load_opts = _LOAD_OPTS  # options on dump will be just ignored.
     _dump_opts = _LOAD_OPTS  # Likewise.
     _ordered = True
+    _extensions = ['cobj', 'configobj']
 
     load_from_path = load_from_stream = base.to_method(load)
 
