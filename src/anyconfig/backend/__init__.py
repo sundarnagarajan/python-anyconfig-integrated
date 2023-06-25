@@ -50,6 +50,12 @@ try:
 except ImportError:
     warnings.warn(_NA_MSG.format('json5', 'JSON5'), ImportWarning)
 
+try:
+    from . import bson
+    PARSERS.append(bson.Parser)
+except ImportError:
+    warnings.warn(_NA_MSG.format('bson', 'BSON'), ImportWarning)
+
 
 __all__ = [
     'ParserT', 'ParsersT', 'ParserClssT',
