@@ -26,7 +26,6 @@ from __future__ import absolute_import
 import sys
 import msgpack
 from .. import base
-import anyconfig.backend.base
 IS_PYTHON_3 = (sys.version_info.major == 3)
 
 from base import to_method
