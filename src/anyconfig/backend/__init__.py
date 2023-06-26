@@ -68,6 +68,12 @@ try:
 except ImportError:
     warnings.warn(_NA_MSG.format('msgpack', 'MSGPACK'), ImportWarning)
 
+try:
+    from . import ion
+    PARSERS.append(ion.Parser)
+except ImportError:
+    warnings.warn(_NA_MSG.format('ion', 'ION'), ImportWarning)
+
 
 __all__ = [
     'ParserT', 'ParsersT', 'ParserClssT',
