@@ -62,6 +62,12 @@ try:
 except ImportError:
     warnings.warn(_NA_MSG.format('cbor2', 'CBOR2'), ImportWarning)
 
+try:
+    from . import msgpack
+    PARSERS.append(msgpack.Parser)
+except ImportError:
+    warnings.warn(_NA_MSG.format('msgpack', 'MSGPACK'), ImportWarning)
+
 
 __all__ = [
     'ParserT', 'ParsersT', 'ParserClssT',
