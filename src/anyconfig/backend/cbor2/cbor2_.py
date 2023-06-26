@@ -30,7 +30,7 @@ from __future__ import absolute_import
 
 import cbor2
 from .. import base
-from base import to_method
+from ..base import to_method
 
 
 class Parser(base.StringStreamFnParser,
