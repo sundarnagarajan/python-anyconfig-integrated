@@ -28,7 +28,7 @@ import msgpack
 from .. import base
 IS_PYTHON_3 = (sys.version_info.major == 3)
 
-from base import to_method
+from ..base import to_method
 
 
 class Parser(base.StringStreamFnParser,
@@ -45,7 +45,7 @@ class Parser(base.StringStreamFnParser,
                   "max_ext_len", "object_pairs_hook"]
     _dump_opts = ["default", "encoding", "unicode_errors", "use_single_float",
                   "autoreset", "use_bin_type"]
-    _ordered = not anyconfig.compat.IS_PYTHON_3  # TODO.
+    _ordered = not IS_PYTHON_3  # TODO.
     _dict_opts = ["object_pairs_hook"]  # Exclusive with object_hook
 
     _load_from_string_fn = to_method(msgpack.unpackb)
